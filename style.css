@@ -1,0 +1,962 @@
+/* =========================================================
+   OLD WEB / 2000s PERSONAL WEBSITE
+   PASSWORD GENERATOR
+   ========================================================= */
+
+:root {
+
+    /* FUNDO */
+
+    --fundo: #d5d5d5;
+    --fundo-claro: #eeeeee;
+
+    --painel: #d0d0d0;
+    --painel-escuro: #b8b8b8;
+
+    /* BORDAS */
+
+    --borda-escura: #666666;
+    --borda-media: #888888;
+    --borda-clara: #ffffff;
+    --borda-preta: #303030;
+
+    /* TEXTO */
+
+    --texto: #222222;
+    --texto-secundario: #555555;
+
+    /* CORES DE STATUS */
+
+    --verde: #697d67;
+    --verde-escuro: #4d5c4b;
+
+    --amarelo: #9a925f;
+    --vermelho: #925d5d;
+
+    /* FONTE */
+
+    --fonte:
+        "Courier New",
+        Courier,
+        monospace;
+
+    --fonte-titulo:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+
+    min-height: 100vh;
+
+    padding: 25px 12px;
+
+    color: var(--texto);
+
+    font-family: var(--fonte);
+    font-size: 13px;
+
+    background-color: var(--fundo);
+
+    /*
+       Fundo pontilhado inspirado em sites pessoais antigos.
+    */
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(70, 70, 70, 0.42) 1px,
+            transparent 1px
+        );
+
+    background-size: 12px 12px;
+}
+
+
+/* =========================================================
+   TEXTURA
+   ========================================================= */
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    opacity: 0.12;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(0, 0, 0, 0.15) 3px
+        );
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.conteudo {
+
+    width: min(900px, 96%);
+
+    margin: 0 auto;
+
+    padding: 10px;
+
+    background: var(--painel);
+
+    border: 2px solid var(--borda-escura);
+
+    box-shadow:
+
+        inset 1px 1px 0 var(--borda-clara),
+
+        inset -1px -1px 0 #777,
+
+        5px 5px 0 rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.conteudo-titulo {
+
+    margin-bottom: 12px;
+
+    border: 2px solid var(--borda-escura);
+
+    background: #dcdcdc;
+
+    box-shadow:
+
+        inset 1px 1px 0 #ffffff,
+
+        inset -1px -1px 0 #888;
+}
+
+
+/* =========================================================
+   BARRA DA JANELA
+   ========================================================= */
+
+.titulo-janela {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 4px 7px;
+
+    color: #eeeeee;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #5a5a5a,
+            #292929
+        );
+
+    border-bottom: 2px solid #222;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+.janela-botoes {
+
+    display: flex;
+
+    gap: 3px;
+}
+
+
+.janela-botoes span {
+
+    width: 17px;
+    height: 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #222;
+
+    background: #cfcfcf;
+
+    border: 1px solid #111;
+
+    box-shadow:
+        inset 1px 1px 0 #ffffff,
+        inset -1px -1px 0 #777;
+
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   CORPO DO TÍTULO
+   ========================================================= */
+
+.titulo-corpo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px;
+
+    text-align: left;
+}
+
+
+.icone-cadeado {
+
+    width: 62px;
+    height: 62px;
+
+    image-rendering: auto;
+
+    filter:
+        grayscale(100%)
+        contrast(1.15);
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.titulo-principal {
+
+    margin: 0;
+
+    color: #292929;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(2rem, 5vw, 3.2rem);
+
+    font-weight: 900;
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+
+    text-transform: lowercase;
+
+    text-shadow:
+        2px 2px 0 #ffffff,
+        3px 3px 0 #777;
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+   ========================================================= */
+
+.titulo-secundario {
+
+    margin: 8px 0 0;
+
+    color: #555;
+
+    font-family: var(--fonte);
+
+    font-size: 12px;
+
+    font-weight: normal;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   CAIXA DA SENHA
+   ========================================================= */
+
+.conteudo-senha {
+
+    position: relative;
+
+    padding: 0 15px 15px;
+
+    background: #e1e1e1;
+
+    border: 2px solid var(--borda-escura);
+
+    box-shadow:
+
+        inset 1px 1px 0 #ffffff,
+
+        inset -1px -1px 0 #888;
+}
+
+
+/* =========================================================
+   CABEÇALHO DA CAIXA
+   ========================================================= */
+
+.caixa-cabecalho {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin: 0 -15px 13px;
+
+    padding: 5px 8px;
+
+    color: #eeeeee;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #555,
+            #292929
+        );
+
+    border-bottom: 2px solid #222;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.conteudo-senha label {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #555;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CAMPO
+   ========================================================= */
+
+.campo-senha-container {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 60px;
+
+    padding: 5px 10px;
+
+    background: #eeeeee;
+
+    border: 2px solid #777;
+
+    box-shadow:
+
+        inset 2px 2px 0 #999,
+
+        inset -1px -1px 0 #ffffff;
+}
+
+
+#campo-senha {
+
+    width: 100%;
+
+    padding: 5px;
+
+    color: #292929;
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+
+    font-family: var(--fonte);
+
+    font-size: clamp(18px, 4vw, 28px);
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.cursor {
+
+    color: #444;
+
+    font-size: 20px;
+
+    animation: piscar 1s steps(1) infinite;
+}
+
+
+@keyframes piscar {
+
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   PARÂMETROS
+   ========================================================= */
+
+.parametro {
+
+    margin-top: 12px;
+
+    padding: 0 15px 15px;
+
+    background: var(--painel);
+
+    border: 2px solid var(--borda-escura);
+
+    box-shadow:
+
+        inset 1px 1px 0 #ffffff,
+
+        inset -1px -1px 0 #888;
+}
+
+
+/* =========================================================
+   CABEÇALHO DOS PARÂMETROS
+   ========================================================= */
+
+.parametro-cabecalho {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin: 0 -15px;
+
+    padding: 5px 8px;
+
+    color: #eeeeee;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #555,
+            #292929
+        );
+
+    border-bottom: 2px solid #222;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   TÍTULO DOS PARÂMETROS
+   ========================================================= */
+
+.parametro-titulo {
+
+    margin: 14px 0;
+
+    padding-bottom: 8px;
+
+    color: #292929;
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    text-transform: lowercase;
+
+    border-bottom: 1px dotted #777;
+}
+
+
+/* =========================================================
+   COLUNAS
+   ========================================================= */
+
+.parametro-coluna__senha {
+
+    display: flex;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   BLOCOS
+   ========================================================= */
+
+.parametro-senha {
+
+    flex: 1;
+
+    padding: 12px;
+
+    background: #dedede;
+
+    border: 2px solid #777;
+
+    box-shadow:
+
+        inset 1px 1px 0 #ffffff,
+
+        inset -1px -1px 0 #999;
+}
+
+
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
+
+.parametro-senha__titulo {
+
+    margin: 0 0 12px;
+
+    padding-bottom: 6px;
+
+    color: #333;
+
+    border-bottom: 1px dotted #888;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CONTROLE DE TAMANHO
+   ========================================================= */
+
+.parametro-senha-botoes {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+.parametro-senha__botao {
+
+    width: 40px;
+    height: 35px;
+
+    color: #222;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #eeeeee,
+            #bcbcbc
+        );
+
+    border: 2px solid #666;
+
+    box-shadow:
+
+        inset 1px 1px 0 #ffffff,
+
+        inset -1px -1px 0 #777;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.parametro-senha__botao:hover {
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #777,
+            #444
+        );
+}
+
+
+.parametro-senha__botao:active {
+
+    box-shadow:
+
+        inset 2px 2px 0 #555,
+
+        inset -1px -1px 0 #eee;
+
+    transform: translate(1px, 1px);
+}
+
+
+.parametro-senha__texto {
+
+    min-width: 45px;
+
+    margin: 0;
+
+    padding: 8px;
+
+    color: #222;
+
+    background: #eeeeee;
+
+    border: 1px solid #777;
+
+    text-align: center;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   CHECKBOXES
+   ========================================================= */
+
+.parametro-senha-checkbox {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 8px 0;
+
+    color: #333;
+
+    font-size: 12px;
+}
+
+
+.checkbox {
+
+    width: 15px;
+    height: 15px;
+
+    margin: 0;
+
+    accent-color: var(--verde);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   BARRA DE FORÇA
+   ========================================================= */
+
+.barra {
+
+    width: 100%;
+    height: 18px;
+
+    overflow: hidden;
+
+    background: #444;
+
+    border: 2px solid #666;
+
+    box-shadow:
+
+        inset 1px 1px 0 #222,
+
+        inset -1px -1px 0 #ffffff;
+}
+
+
+.forca {
+
+    height: 14px;
+
+    position: relative;
+
+    transition: width 0.15s linear;
+}
+
+
+.fraca {
+
+    width: 25%;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #925d5d 0,
+            #925d5d 4px,
+            #7d4d4d 4px,
+            #7d4d4d 8px
+        );
+}
+
+
+.media {
+
+    width: 50%;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #9a925f 0,
+            #9a925f 4px,
+            #817a4e 4px,
+            #817a4e 8px
+        );
+}
+
+
+.forte {
+
+    width: 100%;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #697d67 0,
+            #697d67 4px,
+            #526451 4px,
+            #526451 8px
+        );
+}
+
+
+/* =========================================================
+   TEXTOS DA FORÇA
+   ========================================================= */
+
+.parametro-senha-textos {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 5px;
+
+    color: #666;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+}
+
+
+.parametro-senha-textos p {
+    margin: 0;
+}
+
+
+/* =========================================================
+   ENTROPIA
+   ========================================================= */
+
+.entropia {
+
+    min-height: 30px;
+
+    margin: 10px 0 0;
+
+    padding: 7px;
+
+    color: #444;
+
+    background: #eeeeee;
+
+    border: 1px dotted #888;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.rodape {
+
+    width: min(900px, 96%);
+
+    margin: 12px auto 0;
+
+    padding: 10px;
+
+    color: #666;
+
+    text-align: center;
+
+    font-family: var(--fonte);
+
+    font-size: 10px;
+}
+
+
+.rodape span {
+
+    color: #444;
+
+    font-weight: bold;
+}
+
+
+.rodape strong {
+
+    color: #444;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    body {
+        padding: 12px 6px;
+    }
+
+
+    .conteudo {
+        width: 100%;
+    }
+
+
+    .titulo-corpo {
+
+        flex-direction: column;
+
+        gap: 8px;
+
+        padding: 15px;
+
+        text-align: center;
+    }
+
+
+    .icone-cadeado {
+
+        width: 48px;
+        height: 48px;
+    }
+
+
+    .titulo-principal {
+
+        font-size: 2.1rem;
+    }
+
+
+    .titulo-secundario {
+
+        font-size: 10px;
+    }
+
+
+    .parametro-coluna__senha {
+
+        flex-direction: column;
+    }
+
+
+    .parametro-senha {
+
+        width: 100%;
+    }
+
+
+    .caixa-cabecalho,
+    .parametro-cabecalho {
+
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation: none !important;
+
+        transition: none !important;
+    }
+}

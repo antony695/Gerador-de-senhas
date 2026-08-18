@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>password.exe // gerador</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="conteudo">
+
+        <!-- CABEÇALHO -->
+
+        <section class="conteudo-titulo">
+
+            <div class="titulo-janela">
+            
+
+                <div class="janela-botoes">
+                    <span>_</span>
+                    <span>□</span>
+                    <span>×</span>
+                </div>
+            </div>
+
+            <div class="titulo-corpo">
+
+                <img
+                    src="unlock.svg"
+                    alt="cadeado"
+                    class="icone-cadeado"
+                >
+
+                <div>
+                    <h1 class="titulo-principal">
+                        password generator
+                    </h1>
+
+                    <h2 class="titulo-secundario">
+                        gere uma senha aleatória e segura
+                    </h2>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SENHA -->
+
+        <section class="conteudo-senha">
+
+            <div class="caixa-cabecalho">
+                <span>OUTPUT.TXT</span>
+                <span>[ ENCRYPTED ]</span>
+            </div>
+
+            <label for="campo-senha">
+                senha gerada:
+            </label>
+
+            <div class="campo-senha-container">
+
+                <input
+                    name="senha"
+                    type="text"
+                    id="campo-senha"
+                    readonly
+                >
+
+                <span class="cursor">_</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- PARÂMETROS -->
+
+        <section class="parametro">
+
+            <div class="parametro-cabecalho">
+                <span>CONFIG.SYS</span>
+                <span>● ONLINE</span>
+            </div>
+
+            <h3 class="parametro-titulo">
+                personalize sua senha
+            </h3>
+
+
+            <div class="parametro-coluna__senha">
+
+
+                <!-- TAMANHO -->
+
+                <div class="parametro-senha">
+
+                    <h4 class="parametro-senha__titulo">
+                        número de caracteres
+                    </h4>
+
+                    <div class="parametro-senha-botoes">
+
+                        <button
+                            class="parametro-senha__botao"
+                            type="button"
+                            aria-label="Diminuir tamanho"
+                        >
+                            −
+                        </button>
+
+                        <p class="parametro-senha__texto">
+                            12
+                        </p>
+
+                        <button
+                            class="parametro-senha__botao"
+                            type="button"
+                            aria-label="Aumentar tamanho"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARACTERÍSTICAS -->
+
+                <div class="parametro-senha">
+
+                    <h4 class="parametro-senha__titulo">
+                        características
+                    </h4>
+
+                    <div class="parametro-senha-checkbox">
+
+                        <input
+                            name="maiusculo"
+                            type="checkbox"
+                            class="checkbox"
+                            id="maiusculo"
+                            checked
+                        >
+
+                        <label for="maiusculo">
+                            letras maiúsculas
+                        </label>
+
+                    </div>
+
+
+                    <div class="parametro-senha-checkbox">
+
+                        <input
+                            name="minusculas"
+                            type="checkbox"
+                            class="checkbox"
+                            id="minusculas"
+                        >
+
+                        <label for="minusculas">
+                            letras minúsculas
+                        </label>
+
+                    </div>
+
+
+                    <div class="parametro-senha-checkbox">
+
+                        <input
+                            name="numeros"
+                            type="checkbox"
+                            class="checkbox"
+                            id="numero"
+                        >
+
+                        <label for="numero">
+                            números
+                        </label>
+
+                    </div>
+
+
+                    <div class="parametro-senha-checkbox">
+
+                        <input
+                            name="simbolos"
+                            type="checkbox"
+                            class="checkbox"
+                            id="simbolo"
+                        >
+
+                        <label for="simbolo">
+                            símbolos
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FORÇA -->
+
+                <div class="parametro-senha">
+
+                    <h4 class="parametro-senha__titulo">
+                        força da senha
+                    </h4>
+
+                    <div class="barra">
+                        <div class="forca fraca"></div>
+                    </div>
+
+                    <div class="parametro-senha-textos">
+                        <p>fraca</p>
+                        <p>média</p>
+                        <p>forte</p>
+                    </div>
+
+                    <p class="entropia"></p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="rodape">
+
+        <span>
+            [ SYSTEM MESSAGE ]
+        </span>
+
+        <br>
+
+        projeto desenvolvido pelo estudante
+        <strong>Antony Gabriel</strong>
+
+    </footer>
+
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
